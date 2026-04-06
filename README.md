@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EllaYoga — Site vitrine
 
-## Getting Started
+Site web professionnel pour **EllaYoga**, studio de yoga avec deux adresses à Tel Aviv (Port & Tour Azrieli Sarona). Construit avec Next.js 16, TypeScript et Tailwind CSS.
 
-First, run the development server:
+---
+
+## Fonctionnalités
+
+- **Multilingue** — Français, Anglais, Hébreu (avec support RTL complet)
+- **Réservation en ligne** — Formulaire 2 étapes pour réserver un cours
+- **Planning interactif** — Filtrage par jour et par studio
+- **Blog / Actualités** — Section articles avec photos
+- **Newsletter** — Formulaire d'inscription avec confirmation
+- **RGPD** — Bandeau cookies avec localStorage, mentions légales
+- **SEO de base** — Métadonnées, Open Graph, titres optimisés
+- **Design responsive** — Mobile, tablette, desktop
+- **Photos réelles** — Images téléchargées depuis ellayoga.com
+
+## Sections du site
+
+| Section | Description |
+|---|---|
+| Hero | Titre principal, stats, appel à l'action |
+| Le Studio | Histoire, valeurs, photos des deux studios |
+| Cours | 6 disciplines (Hatha, Vinyasa, Yin, Ashtanga, Nidra, Prénatal) |
+| Planning | Tableau interactif par jour + filtre par studio |
+| Tarifs | 3 formules avec toggle mensuel / annuel |
+| Instructeurs | 4 profils avec biographie au clic |
+| Témoignages | Carousel avec 5 avis clients |
+| Blog | 3 articles avec photos, catégories, traduits |
+| Newsletter | Inscription email |
+| Réservation | Formulaire 2 étapes |
+| Contact | Coordonnées des 2 studios avec Google Maps |
+
+---
+
+## Stack technique
+
+| Technologie | Version | Usage |
+|---|---|---|
+| Next.js | 16.2.2 | Framework principal (App Router) |
+| React | 19 | UI |
+| TypeScript | 5 | Typage |
+| Tailwind CSS | 4 | Utilitaires CSS |
+| Lucide React | — | Icônes |
+| Framer Motion | 12 | Animations (disponible) |
+
+### Design
+- **Typographie** : Cormorant Garamond (titres) + Jost (corps) + Rubik (hébreu)
+- **Palette** : Crème `#FAFAF7` · Sauge `#A8BAA4` · Pierre `#F2EEE8` · Charcoal `#1C1C1A`
+
+---
+
+## Structure du projet
+
+```
+ellayoga/
+├── app/
+│   ├── components/
+│   │   ├── Navbar.tsx          # Navigation + sélecteur de langue
+│   │   ├── Hero.tsx            # Section principale
+│   │   ├── Studio.tsx          # Présentation du studio
+│   │   ├── Cours.tsx           # Grille des cours
+│   │   ├── Planning.tsx        # Planning hebdomadaire
+│   │   ├── Tarifs.tsx          # Abonnements et tarifs
+│   │   ├── Instructeurs.tsx    # Équipe pédagogique
+│   │   ├── Temoignages.tsx     # Avis clients
+│   │   ├── Blog.tsx            # Articles / actualités
+│   │   ├── Newsletter.tsx      # Inscription newsletter
+│   │   ├── Reservation.tsx     # Formulaire de réservation
+│   │   ├── Contact.tsx         # Coordonnées des studios
+│   │   ├── Footer.tsx          # Pied de page
+│   │   └── CookieBanner.tsx    # Bandeau RGPD
+│   ├── lib/
+│   │   └── i18n.tsx            # Contexte i18n + traductions (FR/EN/HE)
+│   ├── globals.css             # Variables CSS + animations
+│   ├── layout.tsx              # Layout racine
+│   └── page.tsx                # Page principale
+├── public/
+│   └── images/                 # Photos des studios (11 images)
+├── package.json
+└── tsconfig.json
+```
+
+---
+
+## Démarrage
+
+### Prérequis
+- Node.js 18+
+- npm 9+
+
+### Installation
+
+```bash
+git clone <repo>
+cd ellayoga
+npm install
+```
+
+### Développement
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Déploiement (Vercel)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx vercel        # Premier déploiement (connexion + configuration)
+npx vercel --prod # Déploiement en production
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Ou connecter le repo Git directement sur [vercel.com](https://vercel.com) pour un déploiement automatique à chaque push.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Internationalisation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Les traductions sont centralisées dans `app/lib/i18n.tsx`.
+
+| Langue | Code | RTL |
+|---|---|---|
+| Français | `fr` | Non |
+| English | `en` | Non |
+| עברית | `he` | Oui |
+
+Pour ajouter une langue, ajouter un bloc dans l'objet `translations` et le code dans le type `Locale`.
+
+---
+
+## Roadmap
+
+- [ ] Intégration paiement en ligne (Stripe)
+- [ ] Système de réservation réel (backend)
+- [ ] Page blog complète avec CMS
+- [ ] Authentification membre
+- [ ] Application mobile
