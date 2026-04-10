@@ -24,7 +24,7 @@ export default function Blog() {
   const { t, isRtl } = useI18n()
 
   return (
-    <section id="blog" style={{ padding: '8rem 2rem', background: 'var(--bg)' }}>
+    <section id="blog" className="py-16 px-5 md:py-32 md:px-8" style={{ background: 'var(--bg)' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', flexDirection: isRtl ? 'row-reverse' : 'row' }}>

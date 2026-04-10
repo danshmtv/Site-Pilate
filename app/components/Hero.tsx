@@ -11,7 +11,7 @@ export default function Hero() {
       <div style={{ position: 'absolute', top: '-10%', right: isRtl ? 'auto' : '-5%', left: isRtl ? '-5%' : 'auto', width: 'min(700px, 60vw)', height: 'min(700px, 60vw)', borderRadius: '50%', background: 'radial-gradient(circle, #D4E2D0 0%, #E8EDE7 40%, transparent 70%)', opacity: 0.6, pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', bottom: '10%', left: isRtl ? 'auto' : '-3%', right: isRtl ? '-3%' : 'auto', width: 'min(400px, 35vw)', height: 'min(400px, 35vw)', borderRadius: '50%', border: '1px solid var(--border)', opacity: 0.5, pointerEvents: 'none' }} />
 
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '8rem 2rem 4rem', width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 pt-20 pb-12 px-5 md:pt-32 md:pb-16 md:px-8 gap-8 md:gap-16" style={{ maxWidth: '1280px', margin: '0 auto', width: '100%', alignItems: 'center' }}>
         {/* Text */}
         <div>
           <div className="animate-fade-up" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', flexDirection: isRtl ? 'row-reverse' : 'row' }}>

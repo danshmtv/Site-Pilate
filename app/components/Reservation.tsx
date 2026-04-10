@@ -29,9 +29,9 @@ export default function Reservation() {
   }
 
   return (
-    <section id="reservation" style={{ padding: '8rem 2rem', background: 'var(--bg)' }}>
+    <section id="reservation" className="py-16 px-5 md:py-32 md:px-8" style={{ background: 'var(--bg)' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '6rem', alignItems: 'start' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '3rem', alignItems: 'start' }}>
           {/* Left info */}
           <div style={{ order: isRtl ? 2 : 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', flexDirection: isRtl ? 'row-reverse' : 'row' }}>

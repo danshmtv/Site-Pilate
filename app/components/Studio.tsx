@@ -6,16 +6,16 @@ export default function Studio() {
   const { t, isRtl } = useI18n()
 
   return (
-    <section id="studio" style={{ padding: '8rem 2rem', background: 'var(--bg)' }}>
+    <section id="studio" className="py-16 px-5 md:py-32 md:px-8" style={{ background: 'var(--bg)' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24" style={{ alignItems: 'center' }}>
           {/* Visual */}
           <div style={{ position: 'relative', order: isRtl ? 2 : 1 }}>
             <div style={{ width: '100%', aspectRatio: '4/5', borderRadius: '4px', overflow: 'hidden', position: 'relative' }}>
               <Image src="/images/namal-home25-2.webp" alt="Studio EllaYoga" fill style={{ objectFit: 'cover' }} />
             </div>
             {/* Offset card */}
-            <div style={{ position: 'absolute', bottom: '-2rem', right: isRtl ? 'auto' : '-2rem', left: isRtl ? '-2rem' : 'auto', background: 'var(--surface)', padding: '1.5rem', borderRadius: '4px', width: '220px', boxShadow: '0 4px 40px rgba(0,0,0,0.05)' }}>
+            <div className="studio-offset-card" style={{ position: 'absolute', bottom: '-2rem', right: isRtl ? 'auto' : '-2rem', left: isRtl ? '-2rem' : 'auto', background: 'var(--surface)', padding: '1.5rem', borderRadius: '4px', width: '220px', boxShadow: '0 4px 40px rgba(0,0,0,0.05)' }}>
               <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '0.9rem', fontWeight: 500, color: 'var(--text)', marginBottom: '0.5rem' }}>✦ Tour Azrieli Sarona</div>
               <div style={{ fontFamily: isRtl ? 'Rubik, sans-serif' : 'Jost, sans-serif', fontSize: '0.72rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
                 {isRtl ? 'האולפן השני שלנו, בלב רובע העסקים' : 'Notre second studio, au cœur du quartier d\'affaires'}

@@ -83,3 +83,94 @@ h1, h2, h3, h4, h5 {
 .delay-600 { animation-delay: 600ms; }
 .delay-700 { animation-delay: 700ms; }
 .delay-800 { animation-delay: 800ms; }
+
+/* ── Responsive layout helpers ── */
+
+/* Section padding: 4rem / 1.25rem on mobile, 8rem / 2rem on desktop */
+.section-pad {
+  padding: 4rem 1.25rem;
+}
+@media (min-width: 768px) {
+  .section-pad {
+    padding: 8rem 2rem;
+  }
+}
+
+/* Hero inner grid container */
+.hero-grid {
+  padding: 5rem 1.25rem 3rem;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .hero-grid {
+    padding: 8rem 2rem 4rem;
+    gap: 4rem;
+  }
+}
+
+/* Studio grid: tighten gap on mobile */
+.studio-grid {
+  gap: 3rem;
+}
+@media (min-width: 768px) {
+  .studio-grid {
+    gap: 6rem;
+  }
+}
+
+/* Studio floating card: keep in-bounds on mobile */
+@media (max-width: 767px) {
+  .studio-offset-card {
+    right: 0.75rem !important;
+    left: auto !important;
+    bottom: 1rem !important;
+    width: 180px !important;
+  }
+}
+
+/* Reservation grid: single column on mobile */
+.reservation-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .reservation-grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+  }
+}
+
+/* Contact studios grid: single column on mobile */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+/* Planning class schedule row */
+.planning-row {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .planning-row {
+    grid-template-columns: 80px 1fr auto auto auto;
+    gap: 1.5rem;
+  }
+}
+
+/* Hide non-essential planning columns on mobile */
+@media (max-width: 767px) {
+  .planning-hide-mobile {
+    display: none;
+  }
+}

@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail } from 'lucide-react'
 import { useI18n } from '../lib/i18n'
 
 export default function Contact() {
-  const { isRtl } = useI18n()
+  const { t, isRtl } = useI18n()
 
   const studios = [
     {
@@ -12,7 +12,7 @@ export default function Contact() {
       address: 'Namal Tel Aviv, 14 Yigal Alon St., Tel Aviv',
       phone: '+972 3-123-4567',
       email: 'namal@ellayoga.com',
-      hours: isRtl ? 'ב׳-ו׳: 7:00–21:00\nשבת–ראשון: 8:00–14:00' : 'Lun–Ven : 7:00–21:00\nSam–Dim : 8:00–14:00',
+      hours: t.contact.hoursNamal,
       image: '/images/namal-home4.jpg',
     },
     {
@@ -20,25 +20,25 @@ export default function Contact() {
       address: 'Sarona Tower, 121 Menachem Begin Rd., Tel Aviv',
       phone: '+972 3-765-4321',
       email: 'sarona@ellayoga.com',
-      hours: isRtl ? 'ב׳-ו׳: 7:00–21:00\nשבת: 8:00–13:00' : 'Lun–Ven : 7:00–21:00\nSam : 8:00–13:00',
+      hours: t.contact.hoursSarona,
       image: '/images/sarona-home5.jpg',
     },
   ]
 
   return (
-    <section id="contact" style={{ padding: '8rem 2rem', background: 'var(--surface)' }}>
+    <section id="contact" className="py-16 px-5 md:py-32 md:px-8" style={{ background: 'var(--surface)' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', flexDirection: isRtl ? 'row-reverse' : 'row' }}>
           <div style={{ width: '2rem', height: '1px', background: 'var(--sage-dark)' }} />
           <span style={{ fontFamily: isRtl ? 'Rubik, sans-serif' : 'Jost, sans-serif', fontSize: '0.7rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--sage-dark)', fontWeight: 500 }}>
-            {isRtl ? 'מצאו אותנו' : 'Nous trouver'}
+            {t.contact.label}
           </span>
         </div>
         <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.5rem, 4vw, 3.8rem)', fontWeight: 300, lineHeight: 1.1, color: 'var(--text)', marginBottom: '4rem', textAlign: isRtl ? 'right' : 'left' }}>
-          {isRtl ? 'האולפנים שלנו' : 'Nos studios'}
+          {t.contact.title}
         </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: '2rem' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '2rem' }}>
           {studios.map((s) => (
             <div key={s.name} style={{ background: 'var(--white)', borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--border)' }}>
               {/* Real photo */}
@@ -60,7 +60,7 @@ export default function Contact() {
 
                   <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1rem', textAlign: isRtl ? 'right' : 'left' }}>
                     <div style={{ fontFamily: isRtl ? 'Rubik, sans-serif' : 'Jost, sans-serif', fontSize: '0.68rem', fontWeight: 500, letterSpacing: isRtl ? '0' : '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.4rem' }}>
-                      {isRtl ? 'שעות פעילות' : "Horaires d'ouverture"}
+                      {t.contact.hoursLabel}
                     </div>
                     <div style={{ fontFamily: isRtl ? 'Rubik, sans-serif' : 'Jost, sans-serif', fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 300, whiteSpace: 'pre-line', lineHeight: 1.7 }}>{s.hours}</div>
                   </div>
@@ -68,7 +68,7 @@ export default function Contact() {
 
                 <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '1.5rem', fontFamily: isRtl ? 'Rubik, sans-serif' : 'Jost, sans-serif', fontSize: '0.72rem', fontWeight: 500, letterSpacing: isRtl ? '0' : '0.1em', textTransform: 'uppercase', color: 'var(--sage-dark)', textDecoration: 'none', borderBottom: '1px solid var(--sage)', paddingBottom: '1px', flexDirection: isRtl ? 'row-reverse' : 'row' }}>
-                  {isRtl ? '← Google Maps' : 'Google Maps →'}
+                  {t.contact.mapsLink}
                 </a>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function Contact() {
         {/* Social */}
         <div style={{ marginTop: '4rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
           <div style={{ fontFamily: isRtl ? 'Rubik, sans-serif' : 'Jost, sans-serif', fontSize: '0.72rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
-            {isRtl ? 'עקבו אחרינו' : 'Suivez-nous'}
+            {t.contact.follow}
           </div>
           <a href="https://instagram.com/ellayoga" target="_blank" rel="noopener noreferrer"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontFamily: isRtl ? 'Rubik, sans-serif' : 'Jost, sans-serif', fontSize: '0.85rem', color: 'var(--text)', textDecoration: 'none', fontWeight: 400 }}>
