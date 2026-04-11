@@ -42,7 +42,7 @@ export default function Contact() {
           {studios.map((s) => (
             <div key={s.name} style={{ background: 'var(--white)', borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--border)' }}>
               {/* Real photo */}
-              <div style={{ width: '100%', height: '220px', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ width: '100%', height: '180px', position: 'relative', overflow: 'hidden' }}>
                 <Image src={s.image} alt={s.name} fill style={{ objectFit: 'cover' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 60%)' }} />
               </div>

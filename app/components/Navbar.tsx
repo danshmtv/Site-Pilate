@@ -29,14 +29,14 @@ export default function Navbar() {
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         transition: 'all 0.4s ease',
-        padding: scrolled ? '0.75rem 2rem' : '1.5rem 2rem',
+        padding: scrolled ? '0.4rem 2rem' : '0.75rem 2rem',
         background: scrolled ? 'rgba(250,250,247,0.95)' : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
         borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <a href="/" style={{ textDecoration: 'none' }}>
-            <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 500, color: 'var(--text)', letterSpacing: '0.05em' }}>
+            <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', fontWeight: 500, color: 'var(--text)', letterSpacing: '0.05em' }}>
               Ella<span style={{ color: 'var(--sage-dark)' }}>Yoga</span>
             </span>
             <div style={{ fontSize: '0.6rem', letterSpacing: '0.25em', color: 'var(--text-muted)', fontFamily: 'Jost, sans-serif', fontWeight: 400, textTransform: 'uppercase', marginTop: '-2px' }}>

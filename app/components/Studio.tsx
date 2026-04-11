@@ -11,7 +11,7 @@ export default function Studio() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24" style={{ alignItems: 'center' }}>
           {/* Visual */}
           <div style={{ position: 'relative', order: isRtl ? 2 : 1 }}>
-            <div style={{ width: '100%', aspectRatio: '4/5', borderRadius: '4px', overflow: 'hidden', position: 'relative' }}>
+            <div style={{ width: '100%', aspectRatio: '4/5', maxHeight: '480px', borderRadius: '4px', overflow: 'hidden', position: 'relative' }}>
               <Image src="/images/namal-home25-2.webp" alt="Studio EllaYoga" fill style={{ objectFit: 'cover' }} />
             </div>
             {/* Offset card */}

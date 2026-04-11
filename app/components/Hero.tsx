@@ -60,7 +60,7 @@ export default function Hero() {
 
         {/* Image */}
         <div className="animate-fade-in delay-300 hidden md:block" style={{ position: 'relative' }}>
-          <div style={{ width: '100%', aspectRatio: '3/4', borderRadius: '180px 180px 0 0', overflow: 'hidden', position: 'relative' }}>
+          <div style={{ width: '100%', aspectRatio: '3/4', maxHeight: '520px', borderRadius: '180px 180px 0 0', overflow: 'hidden', position: 'relative' }}>
             <Image
               src="/images/namal-home25-1.webp"
               alt="EllaYoga studio"

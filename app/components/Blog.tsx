@@ -45,7 +45,7 @@ export default function Blog() {
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.boxShadow = 'none' }}
             >
               {/* Image */}
-              <div style={{ width: '100%', height: '220px', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ width: '100%', height: '180px', position: 'relative', overflow: 'hidden' }}>
                 <Image src={blogImages[i]} alt={article.title} fill style={{ objectFit: 'cover', transition: 'transform 0.5s' }} />
                 {/* Category pill */}
                 <div style={{ position: 'absolute', top: '1rem', left: isRtl ? 'auto' : '1rem', right: isRtl ? '1rem' : 'auto', background: catColors[article.cat] || 'var(--sage-dark)', color: 'var(--white)', fontFamily: isRtl ? 'Rubik, sans-serif' : 'Jost, sans-serif', fontSize: '0.6rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0.3rem 0.75rem', borderRadius: '2px' }}>
