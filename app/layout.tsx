@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import ScaleWrapper from "./components/ScaleWrapper";
 
 export const metadata: Metadata = {
   title: "EllaYoga — Studio de Yoga à Tel Aviv",
@@ -29,7 +30,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body>{children}</body>
+      <body>
+        <ScaleWrapper>{children}</ScaleWrapper>
+      </body>
     </html>
   );
 }
